@@ -38,6 +38,8 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools'
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -74,4 +76,3 @@ jobs:
           path: ${{ env.SRC_DIR }}/fermata/build/outputs/apk_from_bundle/autoRelease/*.apk
           retention-days: 30
           if-no-files-found: error
-          
